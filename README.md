@@ -30,4 +30,4 @@ For multi-select, each option (ang-select-list-item element) will toggle the 'se
 
 # plunkr
 
-http://plnkr.co/edit/szssBApt01llTgVvooMC?p=info
+http://embed.plnkr.co/szssBApt01llTgVvooMC/preview
