@@ -28,6 +28,18 @@
       <div class="container">
         <ang-select multiple data="vm.colors" model="vm.multiModel" field="color" placeholder="Select..."></ang-select>
       </div>
+      <h2> State Test </h2>
+      <div class="container">
+        <button ng-click="vm.error = !vm.error">Toggle Error</button>
+        <button ng-click="vm.disabled = !vm.disabled">Toggle Disable</button>
+        <br/><br/>
+        <ang-select multiple data="vm.colors" model="vm.stateModel" field="color" error="vm.error" disabled="vm.disabled" placeholder="Select..."></ang-select>
+      </div>   
+      <h2> Animation Test </h2>
+      <div class="container">
+        <br/><br/>
+        <ang-select id="anim-select" multiple data="vm.colors" model="vm.animModel" field="color" placeholder="Select..."></ang-select>
+      </div>  
     </div>
     <script src="myApp.js" type="text/javascript"></script>
     <script src="angSelectBoxDirective.js" type="text/javascript"></script>
