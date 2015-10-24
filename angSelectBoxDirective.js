@@ -329,8 +329,8 @@ angular.module('angSelect',[])
 						// clear other dropdowns
 						for (var i = 0, ii = _dropdowns.length; i < ii; i++ ) {
 							if (_dropdowns[i] !== element) {
-								element.removeClass('active');
-								_dropdowns[i][0].style.display = 'none';
+								_dropdowns[i].removeClass('active');
+								_dropdowns[i].find('ang-select-list')[0].style.display = 'none';
 							}
 						}
 
