@@ -78,7 +78,7 @@
 'use strict';
 
 angular.module('angSelect',[])
-	.directive('angSelectList', [function() {
+	.directive('angSelectContent', [function() {
 		return {
 			restrict:'E',
 			scope:true,
@@ -111,9 +111,11 @@ angular.module('angSelect',[])
 
 				return '' +
 				'<ang-select-display class="ang-select-display" style="display:block"><span>{{selectionDisplay}}</span></ang-select-display>' +
-                '<ang-select-list class="ang-select-list" style="display:none; width:100%; position:absolute; top:100%; left:0;" ng-transclude>' +
+                '<ang-select-content class="ang-select-content" style="display:none; position:absolute; top:100%; left:0; width:100%;" ng-transclude>'+
+                '<ang-select-list class="ang-select-list" style="display:block;">' +
                 '<ang-select-list-item class="ang-select-list-item" style="display:block" ng-repeat="item in list" ng-click="select($index, $event)"><span>'+fieldDisplay+'</span></ang-select-list-item>' +
-                '</ang-select-list>';
+                '</ang-select-list>'+
+                '</ang-select-content>';
 			},
 			link: function(scope, element, attr) {
 
@@ -150,7 +152,7 @@ angular.module('angSelect',[])
 						scope.multiSelectMap = [];
 
 						// add select option per item in data array
-						for (var i = 0; i < scope.list.length; i++) {
+						for (var j = 0; j < scope.list.length; j++) {
 							scope.multiSelectMap.push(false);
 						}
 						displayMulti();
@@ -194,12 +196,12 @@ angular.module('angSelect',[])
 
 				function toggle() {
 					element.toggleClass('active');			              
-					element.find('ang-select-list')[0].style.display = element.hasClass('active') ? 'block' : 'none';
+					element.find('ang-select-content')[0].style.display = element.hasClass('active') ? 'block' : 'none';
 				}
 
 				function collapse() {
 					element.removeClass('active');
-					element.find('ang-select-list')[0].style.display = 'none';
+					element.find('ang-select-content')[0].style.display = 'none';
 				}
 
 				/*****************************************************
@@ -330,7 +332,7 @@ angular.module('angSelect',[])
 						for (var i = 0, ii = _dropdowns.length; i < ii; i++ ) {
 							if (_dropdowns[i] !== element) {
 								_dropdowns[i].removeClass('active');
-								_dropdowns[i].find('ang-select-list')[0].style.display = 'none';
+								_dropdowns[i].find('ang-select-content')[0].style.display = 'none';
 							}
 						}
 
