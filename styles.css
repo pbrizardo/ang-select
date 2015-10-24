@@ -5,7 +5,7 @@ body {
 
 *, *:before, *:after { box-sizing: border-box;}
 
-.ang-select .ang-select-display {border:2px outset #999; padding:5px 8px; }
+.ang-select .ang-select-display {border:2px outset #999; padding:5px 8px; -webkit-user-select:none; }
 .ang-select.active .ang-select-display { border:2px inset #999; }
 .ang-select .ang-select-list { border:1px solid #999; background-color:white;}
 .ang-select .ang-select-list-item { padding:5px 8px; }
@@ -14,3 +14,15 @@ body {
 
 .ang-select.error .ang-select-display{border:2px solid red; color:red;}
 .ang-select.disabled {background-color:#ccc;}
+
+#anim-select .ang-select-content {
+  -webkit-transition:max-height 0.2s linear;
+  max-height:0;
+  overflow:hidden;
+  display:block !important;
+}
+
+#anim-select.active .ang-select-content {
+  -webkit-transition:max-height 0.2s linear;
+  max-height:200px;
+}
