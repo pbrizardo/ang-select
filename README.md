@@ -1,5 +1,5 @@
 # ang-select
-AngularJS Select Box with CSS customization and multi-select option
+AngularJS Select Box with CSS customization and multi-select option. This directive basically replaces the select element in order to customize the options.
 
 Just need AngularJS and some styling (CSS is super bare bones)
 
