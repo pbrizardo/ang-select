@@ -7,7 +7,8 @@ body {
 
 .ang-select .ang-select-display {border:2px outset #999; padding:5px 8px; -webkit-user-select:none; }
 .ang-select.active .ang-select-display { border:2px inset #999; }
-.ang-select .ang-select-list { border:1px solid #999; background-color:white;}
+.ang-select .ang-select-content { background-color:white; }
+.ang-select .ang-select-list { border:1px solid #999;}
 .ang-select .ang-select-list-item { padding:5px 8px; }
 .ang-select .ang-select-list-item:hover { background-color:#ddd; }
 .ang-select .ang-select-list-item.selected { background-color:#9cf; }
@@ -15,14 +16,45 @@ body {
 .ang-select.error .ang-select-display{border:2px solid red; color:red;}
 .ang-select.disabled {background-color:#ccc;}
 
+/* Animation fun */
+
+/* Set border radius for display. meh */
+#anim-select .ang-select-display {
+  -webkit-border-top-left-radius:5px;
+  -webkit-border-top-right-radius:5px;
+}
+
+/* Animate list */
+#anim-select .ang-select-list {
+  -webkit-border-bottom-left-radius:5px;
+  -webkit-border-bottom-right-radius:5px;
+  -webkit-transition:background-color 1s;
+  background-color:white;
+}
+
+#anim-select.active .ang-select-list {
+  background-color:#cfc;
+}
+
+/* Animate list item */
+#anim-select.active .ang-select-list-item {
+  -webkit-transition:all 0.3s;
+  color:black;
+}
+
+#anim-select.active .ang-select-list-item:hover {
+  color:blue;
+}
+
+/* Animate content (toggle slide)*/
 #anim-select .ang-select-content {
-  -webkit-transition:max-height 0.2s linear;
+  -webkit-transition:all 0.2s;
   max-height:0;
   overflow:hidden;
   display:block !important;
 }
 
 #anim-select.active .ang-select-content {
-  -webkit-transition:max-height 0.2s linear;
+  -webkit-transition:all 0.2s;
   max-height:200px;
 }
