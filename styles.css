@@ -1,0 +1,13 @@
+body {
+  font-family: Helvetica Neue, Arial;
+  font-size:12px;
+}
+
+*, *:before, *:after { box-sizing: border-box;}
+
+.ang-select .ang-select-display {border:2px outset #999; padding:5px 8px; }
+.ang-select.active .ang-select-display { border:2px inset #999; }
+.ang-select .ang-select-list { border:1px solid #999; }
+.ang-select .ang-select-list-item { padding:5px 8px; }
+.ang-select .ang-select-list-item:hover { background-color:#ddd; }
+.ang-select .ang-select-list-item.selected { background-color:#9cf; }
